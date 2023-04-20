@@ -1,0 +1,154 @@
+html, body {
+    background: #d5e1ef;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0px;
+    padding: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+/*primer parametro x segundo parametro y tercer parametro difuminado */
+
+.card-container {
+    background: rgb(246, 207, 87);
+    border-radius: 20px;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, .1);
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    width: 220px;
+}
+
+.card-container .pokeball {
+    animation-name: shake;
+    animation-duration: 1.0s;
+    animation-iteration-count: infinite;
+    background: #ffffff;
+    border: 10px solid #000;
+    border-radius: 50%;
+    box-shadow: inset -10px 10px 0 10px #cccccc;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+}
+
+.card-container .pokeball::before,
+.card-container .pokeball::after {
+    content: "";
+    position: absolute;
+}
+
+.card-container .pokeball::before {
+    background: red;
+    height: 50%;
+    left: 0px;
+    width: 100%;
+}
+
+.card-container .pokeball::after {
+    background: #000;
+    height: 15px;
+    left: 0px;
+    top: calc(50% - 10px);
+    width: 100%;
+}
+
+.pokeball-button {
+    animation-name: blink;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    background: #dee1e3;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px black;
+    height: 40px;
+    left: calc(50% - 30px);
+    position: absolute;
+    top: calc(50% - 30px);
+    width: 40px;
+    z-index: 10;
+}
+
+.pokeball:hover {
+    animation-play-state: paused;
+    transform: translate(0, 0) rotate(0);
+}
+
+.pokeball-button:hover {
+    animation-play-state: paused;
+    background: rgb(220, 20, 60);
+}
+
+.card-container h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.card-container h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.card-container p {
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.fa {
+    color: red;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    /* border-radius: 50%; */
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0) rotate(0);
+    }
+
+    20% {
+        transform: translate(-15px, 0) rotate(-10deg);
+    }
+
+    30% {
+        transform: translate(15px, 0) rotate(30deg);
+    }
+
+    50% {
+        transform: translate(-15px, 0) rotate(-30deg);
+    }
+
+    60% {
+        transform: translate(15px, 0) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
+}
+
+@keyframes blink {
+    from {
+        background: #dee1e3;
+    }
+
+    to {
+        background: rgb(220, 20, 60);
+    }
+
+}
